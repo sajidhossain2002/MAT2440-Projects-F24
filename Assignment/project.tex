@@ -1,0 +1,135 @@
+\documentclass{article}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\usepackage{easyReview}
+
+\usepackage[letterpaper, total={6.5in, 10in}]{geometry}
+
+
+\author{Daniel Packer}
+\title{MAT2440 Fall 2024 Project}
+
+\setcounter{section}{-1}
+
+\begin{document}
+\maketitle
+
+\section{Using GitHub and \texttt{git}}
+\href{https://www.github.com/}{GitHub} is an online platform, maintained by Microsoft, which you can use to host projects.
+It is \textit{not} to be confused with \href{https://git-scm.com/}{\texttt{git}}, which is a distributed version control system.
+
+In using GitHub, you will also become familiar with \texttt{git}, but it is a common point of confusion to conflate the two things.
+Ultimately \texttt{git} is akin to a programming language, but focused specifically on version management.
+On the other hand, GitHub is more of a hosting service to store the data that \texttt{git} is keeping track of.
+
+\subsection{Using \texttt{git}}
+When working on a project, \href{https://www.youtube.com/watch?v=Fb2q141rMNE}{you may find yourself} with two separate goals for working on your project.
+Without a version management system, you have to work on these projects serially.
+However, if you are working on a team (or you simply get bored of working on one goal), you might want to be able to switch back and forth between your work on the two goals.
+You can do this with \texttt{git}, if you use a ``repository'' to store your project.
+There two fundamental actions to accomplish this from within your repository: ``branching'', which you should use to split your project into two versions (called branches) that you can work on, and `committing', which is how you save changes to a particular branch that you are working on.
+A great visual guide to understand how \texttt{git} works is available \href{https://learngitbranching.js.org/}{here}.
+
+In practice, since these projects will not require very complicated \texttt{git} usage, you will not need to know very complicated commands.
+
+\subsection{Using GitHub}
+As mentioned earlier, GitHub is a hosting service, which was acquired by Microsoft in 2018.
+When using \texttt{git} on its own, you're limited to version control for you and you alone.
+The real power of \texttt{git} comes from being able to easily collaborate with others.
+
+This is where GitHub comes in (other similar tools include \href{https://gitlab.com}{GitLab} and \href{https://about.gitea.com/}{Gitea}.
+When you host a repository online, everyone can branch and make commits to various projects on the repository, and all of the changes will be kept track of, so the branches can be merged back together in the end.
+
+To use GitHub, you will have to make an account on \href{https://github.com}{the website}.
+I would recommend using your school email, so you can have access to \href{https://github.com/education}{GitHub Education}, which gives you free access to GitHub resources you normally have to pay money for.\footnote{I pay ten bucks a month for some of these!}
+
+Once you have a GitHub account, send me a message in some fashion with the name (or email) associated to your account, and I will add you as a collaborator to the \href{https://github.com/Daniel-Packer/MAT2440-Projects-F24}{repository we will use for project submission.}
+When you do that, you should also ``clone'' (i.e. locally copy the repository) with a git terminal command like:
+\begin{verbatim}
+git clone https://github.com/Daniel-Packer/MAT2440-Projects-F24
+\end{verbatim}
+
+Then you can ``branch'' off of the \texttt{main} branch with a command like:
+\begin{verbatim}
+git branch your-name-submission
+git checkout your-name-submission
+\end{verbatim}
+ 
+You will prepare your project submission here and then submit your final work via a ``Pull Request'', which I will review.
+
+\subsubsection{Making a Pull Request}
+Once you have made a commit to the branch on your local repository, you can push the changes to GitHub, by entering the command:
+\begin{verbatim}
+git push
+\end{verbatim}
+This will make a change to \textit{your specific branch} and not the \texttt{main} branch.
+In order to have your changes incorporated (submitted) to the main branch, you will have to make what is called a ``Pull Request'' (PR).
+This is one of the main way that software developers contribute their changes to code bases
+A lot of the day-to-day work of software development consists of either (a) submitting one's work in the form of a PR or (b) reviewing the submission of other people's work (also in the form of a PR).
+To create a PR, you can follow the directions \href{https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request}{here}.
+
+\vspace{0.2in}
+\centering \alert{
+	\bf
+	You will submit your project as a PR to this repo: \href{https://github.com/Daniel-Packer/MAT2440-Projects-F24}{Daniel-Packer/MAT2440-Projects-F24}.
+}
+
+\raggedright\subsection{A bit more about GitHub}
+I am requiring the assignment to be submitted through GitHub for a couple of key reasons:
+\begin{itemize}
+	\item Being familiar with how version control systems like \texttt{git} work is very important to most software development jobs.
+	\item A GitHub account is a great way to showcase your projects--by automatically uploading your projects, you can help build up a ``portfolio'' of the work that you have done, which can be helpful during the interview process.
+	\item In a similar vein, having a single unified GitHub account ensures that you will never ``lose'' any projects you're working on, since they will be saved online and not just on your computer.
+	\item GitHub presents a lot of ways to build websites that are more advanced than a simple blog and provides hosting for static websites.
+	\item A great way to get experience in ``real-world'' coding outside of a job or internship is by contributing to open source projects. Almost all of these projects are hosted on GitHub (or at a minimum use \texttt{git}), so this will help build up a skill that will be useful more broadly.
+\end{itemize}
+\section{The Assignment}
+The goal of this project is to give you a chance to implement some of the more interesting algorithms that we are talking about this semester in the programming language of your choice.
+I would personally recommend a ``higher level'' language like \texttt{python}, so you won't have to think too much about certain practical concerns that are not relevant to this course (such as memory allocation).
+However, you can submit your project in any language you would like, and I will not be biased either way.
+
+I will not prescribe a particular set of algorithms that you have to implement, but you should pick some algorithms that align closer to your interests!
+Below are some suggestions from the course outline, which can serve as a guide.
+I would suggest/encourage doing a project not on the list and proposing a new project idea to me instead--I'll be happy to chat to help you narrow down to a project of the appropriate size (I don't want you doing a project that is too hard or too easy!).
+
+\begin{itemize}
+	\item Implement the max and linear search algorithms in a programming language.
+	\item Timing algorithms by input size.
+	\item Primality testing using a programming language.
+	\item Implement a hashing function and a pseudorandom generator in a programming language.
+	\item Implement a Caesar cipher.
+	\item Implement a Tower of Hanoi game.
+\end{itemize}
+
+\section{``Deliverables''}
+This is a course on algorithms, not on good code standards, but it is still not productive to separate the two goals.
+Thus, I am going to ask for you PR to include more than just single file with the implementations of your algorithms, and you will be graded on the quality of your implementation, your documentation, and your code organization.
+
+In particular, you should submit your work in a folder titled \texttt{\textbf{Your-name-submission}}, which will contain the following subfolders or files:
+\begin{enumerate}
+	\item A \texttt{README.md} file that describes what you did for your project, how to run the files, and the organization of your submission.
+	\item A \texttt{src} folder that contains the code used to implement your algorithm. The code in this folder should be clearly organized and easy (for me) to run based on your documentation.
+	\item A \texttt{tests} folder that contains scripts that test that your code does what you tell me it does. The scripts in this folder should also be easy for me to run tests on. The tests in this folder should cover a wide swath of possible inputs to your algorithms.
+\end{enumerate}
+
+Your submitted code should be well-documented, follow good \href{https://en.wikipedia.org/wiki/Coding_conventions}{coding conventions}, and be bug free (as demonstrated by passing a robust set of tests).
+
+\section{Academic Honesty}
+This assignment will be very easy to cheat on in one of two ways:
+\begin{itemize}
+	\item By copying a solution from somewhere on the internet. Unless you come up with a particularly novel project idea, there will almost certainly be a solution to your problem somewhere on the internet.
+	\item By using an LLM (like ChatGPT or Claude).
+\end{itemize}
+While I do stand a small chance of identifying if you cheat in either of these ways, I would really like to avoid having to do it, so please don't cheat!
+
+The point of this project is to demonstrate that you know how to turn abstract algorithms into practical implementations.
+Using an LLM or otherwise stealing someone else's work fails to demonstrate that fact to me and so will receive a failing grade.
+
+\end{document}
